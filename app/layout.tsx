@@ -16,9 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PureChart — 차트 패턴으로 배우는 주식 예측",
-  description:
-    "과거 차트의 모양을 학습하고 다음 움직임을 예측해 보세요. 한국투자증권 데이터 기반의 차트 패턴 학습 플랫폼.",
+  title: "PureChart — 실시간 주식 대시보드",
+  description: "KST 기준 한국장·미국장 실시간 시세를 WebSocket으로 받아보는 주식 대시보드.",
 };
 
 export const viewport: Viewport = {
@@ -30,9 +29,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="ko"

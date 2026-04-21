@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* CLAUDE.md / AGENTS.md의 var(--color-*) 예시 패턴이 Tailwind v4 스캐너에 걸려
+   잘못된 CSS를 생성하는 것을 막기 위해 두 파일을 소스 스캔에서 제외한다. */
+@source "!../CLAUDE.md";
+@source "!../AGENTS.md";
+
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;

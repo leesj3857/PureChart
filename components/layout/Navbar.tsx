@@ -8,8 +8,7 @@ import Logo from "./Logo";
 
 const links = [
   { href: "/", label: "대시보드" },
-  { href: "/patterns", label: "패턴 도감" },
-  { href: "/chart/005930", label: "차트" },
+  { href: "/patterns", label: "패턴 도감", disabled: true },
   { href: "/quiz", label: "예측 퀴즈", disabled: true },
 ];
 
@@ -89,9 +88,10 @@ export default function Navbar() {
               ⌘K
             </kbd>
           </div>
+
           <button
             type="button"
-            className="hidden rounded-md border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-sm font-medium text-emerald-300 transition-colors hover:bg-emerald-500/20 sm:inline-flex"
+            className="hidden rounded-md border border-[color:var(--color-brand-500)]/30 bg-[color:var(--color-brand-500)]/10 px-3 py-1.5 text-sm font-medium text-[color:var(--color-brand-300)] transition-colors hover:bg-[color:var(--color-brand-500)]/20 sm:inline-flex"
           >
             로그인
           </button>
@@ -126,7 +126,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile drawer */}
+      {/* 모바일 드로어 */}
       <AnimatePresence>
         {open && (
           <div className="md:hidden">
@@ -145,10 +145,7 @@ export default function Navbar() {
               initial={reduce ? { opacity: 0 } : { opacity: 0, y: -12 }}
               animate={reduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
               exit={reduce ? { opacity: 0 } : { opacity: 0, y: -12 }}
-              transition={{
-                duration: reduce ? 0 : 0.24,
-                ease: [0.22, 1, 0.36, 1],
-              }}
+              transition={{ duration: reduce ? 0 : 0.24, ease: [0.22, 1, 0.36, 1] }}
               className="relative z-40 border-t border-[color:var(--color-border-subtle)] bg-[color:var(--color-bg-surface)] px-4 py-3"
             >
               <ul className="flex flex-col gap-1">
@@ -174,7 +171,7 @@ export default function Navbar() {
                           l.disabled
                             ? "cursor-not-allowed text-[color:var(--color-fg-muted)]"
                             : active
-                              ? "bg-emerald-500/10 text-emerald-200"
+                              ? "bg-[color:var(--color-brand-500)]/10 text-[color:var(--color-brand-300)]"
                               : "text-[color:var(--color-fg-secondary)] hover:bg-white/5 hover:text-white"
                         }`}
                       >
@@ -191,7 +188,7 @@ export default function Navbar() {
                 <li className="mt-2 border-t border-[color:var(--color-border-subtle)] pt-3">
                   <button
                     type="button"
-                    className="flex w-full items-center justify-center gap-2 rounded-md border border-emerald-500/30 bg-emerald-500/10 px-3 py-2 text-sm font-medium text-emerald-300"
+                    className="flex w-full items-center justify-center gap-2 rounded-md border border-[color:var(--color-brand-500)]/30 bg-[color:var(--color-brand-500)]/10 px-3 py-2 text-sm font-medium text-[color:var(--color-brand-300)]"
                   >
                     로그인
                   </button>

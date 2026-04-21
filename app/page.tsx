@@ -1,20 +1,8 @@
-import Hero from "@/components/home/Hero";
-import Features from "@/components/home/Features";
-import TrendingStocks from "@/components/home/TrendingStocks";
-import PatternPreview from "@/components/home/PatternPreview";
-import Roadmap from "@/components/home/Roadmap";
-import CTA from "@/components/home/CTA";
-import { PATTERNS } from "@/data/patterns";
+import { getActiveMarket } from "@/lib/market-time";
+import WsDashboard from "@/components/dashboard/WsDashboard";
 
 export default function Home() {
-  return (
-    <>
-      <Hero />
-      <Features />
-      <TrendingStocks />
-      <PatternPreview patterns={PATTERNS} />
-      <Roadmap />
-      <CTA />
-    </>
-  );
+  // 서버에서 KST 기준으로 시장을 결정해 클라이언트에 전달 → 초기 렌더 깜빡임 방지
+  const market = getActiveMarket();
+  return <WsDashboard initialMarket={market} />;
 }
